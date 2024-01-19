@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handballer list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Data Form</h1>
+    
+    <form id="dataForm">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="dob">Date of Birth (dd.mm.yyyy):</label>
+        <input type="text" id="dob" name="dob" pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$" required><br>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" required><br>
+
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required><br>
+
+        <label for="club">Club:</label>
+        <input type="text" id="club" name="club" required><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <h2>Submitted Data</h2>
+    <ul id="dataList"></ul>
+
+    <button type="button" onclick="fetchData()">Fetch Data</button>
+    
+    <h2>All Records from Database</h2>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Position</th>
+                <th>Nationality</th>
+                <th>Club</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
